@@ -1,0 +1,836 @@
+* {
+  margin: 0; 
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html{
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Josefin Sans", sans-serif;
+}
+
+/* ----------BOTON PARA SUBIR---------- */
+#btn-up{
+  width: 40px;
+  height: 40px;
+  background: rgb(230, 220, 233);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: rgb(238, 17, 139);
+  border-radius: 50%;
+  font-size: 20px;
+  position: fixed;
+  bottom: 40px;
+  left: 40px;
+  cursor: pointer;
+  border: 4px solid transparent;
+  transition: all 300ms ease;
+  transform: scale(0);
+}
+#btn-up:hover{
+  transform: scale(1.1);
+  border-color: rgba(0, 0, 0, 0.1);
+}
+/* ----------BOTON PARA SUBIR---------- */
+
+/* ------------------------NAVBAR INICIO-------------------- */
+nav {
+  position: relative;
+  z-index: 10;
+}
+
+.navbar-menu {
+  /* background: linear-gradient(90deg, #4776e6 0%, #8e54e9 100%); */
+  background-color: rgba(255, 255, 255, 0);
+  height: 50px;
+  width: 100%;
+  position: fixed;
+}
+
+.navbar-menu ul {
+  text-align: center;
+  margin-right: 20px;
+  list-style: none;
+}
+
+.nav-options li {
+  display: inline-block;
+  line-height: 50px;
+  margin: 0 5px;
+}
+
+.nav-options li a {
+  color: #ffffff;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 20px;
+  padding: 5px 10px;
+  position: relative;
+  border-radius: 20px;
+
+}
+
+.nav-options a:focus,
+.nav-options a:hover {
+  background-color: #5e1acc;
+  transition: 0.3s;
+}
+
+.checkbtn {
+  font-size: 25px;
+  float: right;
+  color: #ffffff;
+  line-height: 50px;
+  margin-right: 25px;
+  cursor: pointer;
+  display: none;
+}
+
+#check {
+  display: none;
+}
+
+/* ----------------------------NAVBAR FINAL------------- */
+
+/*-----------------------------DIV 1 HOME--------------------------*/
+.sec1 {
+
+  position: relative;
+  width: 100%;
+  height: 100vh;
+
+  background: linear-gradient(90deg, #4776e6 0%, #8e54e9 100%);
+  min-height: 100vh;
+
+  /* height: 600px; */
+  display: flex;
+  align-items: center;
+}
+
+
+/* CONTENEDOR DE TEXTOS */
+.contenedor-textos {
+  flex-basis: 50%;
+  padding-left: 40px;
+  overflow: hidden;
+  color: #fff;
+  /* float: left; */
+
+}
+
+/* TITULO PRINCIPAL H1 */
+.titulo {
+  font-size: 50px;
+  margin: 20px 0;
+  font-family: "Josefin Sans";
+
+  /*EFECTO COLOR*/
+  background: linear-gradient(to left,
+      #ffffff 10%, #1c4b6d 50%, #ffffff 60%);
+  background-size: auto auto;
+  background-clip: border-box;
+  background-size: 200% auto;
+  color: white;
+  background-clip: text;
+  text-fill-color: transparent;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: textclip 6s linear infinite;
+}
+
+/* EFECTO TITULOS */
+a {
+  text-decoration: none;
+  color: #9ca0b1;
+}
+@keyframes textclip {
+  to {
+    background-position: 200% center;
+  }
+}
+
+
+
+/* BOTON INICIO */
+.boton {
+  position: relative;
+  display: block;
+  padding: 25px 10px;
+  border-radius: 50px;
+  text-align: center;
+  font-weight: bold;
+  max-width: 320px;
+  height: 65px;
+  margin-bottom: 60px;
+  overflow: hidden;
+  color: #ffffff;
+  cursor: pointer;
+  letter-spacing: 2px;
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.1);
+  text-decoration: none;
+  transition: all ease 0.5s;
+  background: #10b87b;
+  font-family: "Josefin Sans";
+}
+
+a.boton:after,
+a.boton:before {
+  width: 80px;
+  height: 200px;
+  content: "";
+  display: block;
+  background: rgba(255, 255, 255, 0.5);
+  transform: rotate(45deg);
+  top: -60px;
+  position: absolute;
+  transition: none;
+  right: -45%;
+  cursor: pointer;
+}
+
+a.boton:before {
+  left: -48%;
+}
+
+a.boton:hover {
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.5);
+  background: #12c987;
+}
+
+a.boton:hover:after,
+a.boton:hover:before {
+  transform: rotate(45deg), scaleX(130%);
+  background: rgba(255, 255, 255, 0.1);
+  transition: all ease 0.5s;
+}
+
+a.boton:hover:after {
+  right: 130%;
+}
+
+a.boton:hover:before {
+  left: 130%;
+}
+
+/* FIN BOTON INICIO */
+
+
+
+
+
+
+/* CONTENEDOR IMAGEN PRINCIPAL */
+.contenedor-imagen {
+  flex-basis: 50%;
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  overflow: hidden;
+
+  /* width: 500px; */
+  /* height: 500px; */
+  float: right;
+}
+
+
+/* LOGO PRINCIPAL */
+.logoppal {
+  animation: logoAnimado ease-in 1s infinite alternate;
+  width: 85%;
+}
+
+/* ANIMACION DEL LOGO PRINCIPAL */
+@keyframes logoAnimado {
+  0% {
+    transform: scale(1);
+  }
+
+  100% {
+    transform: scale(1.05);
+  }
+}
+
+/* CONTENEDOR DE REDES SOCIALES */
+.contenedor-sociales {
+  /* position: absolute; */
+  width: 170px;
+  height: 70px;
+  z-index: 1;
+  right: 10px;
+  margin-top: 42%;
+  background: #fff;
+  border-radius: 40px;
+  text-align: center;
+  position: fixed;
+
+
+}
+
+/* LOGO INSTAGRAM */
+.logoig {
+  position: relative;
+  width: 70px;
+  height: 70px
+}
+
+/* LOGO GMAIL */
+.logogmail {
+  position: relative;
+  width: 70px;
+  height: 70px;
+}
+
+/*-----------------------------DIV 1 HOME--------------------------*/
+
+/*--------------------------DIV 2 PROGRAMAS---------------------------*/
+.sec2 {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background: linear-gradient(90deg, #7474BF 0%, #348AC7 100%);
+}
+
+
+/* Triangulo 1 */
+.triangulo1 {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+}
+
+/* IMG PROGRAMAS */
+.img-programas {
+  position: absolute;
+  padding-left: 25px;
+  padding-top: 230px;
+  width: 650px;
+}
+
+/* IMG GATO PC */
+.gatopc{
+  position: absolute;
+  width: 292px;
+  height: 274px;
+  top: 150px;
+  left: 700px;
+}
+
+/* DIV DE TEXTOS */
+.container-text-sec2 {
+  flex-basis: 50%;
+  overflow: hidden;
+  color: #fff;
+  right: 0;
+  margin-right: 30px;
+  margin-top: 380px;
+  align-items: center;
+  width: 511px;
+  height: 254px;
+  position: absolute;
+}
+
+/* TITULO SECCION 2 */
+.titulo-sec2 {
+  font-size: 50px;
+  font-family: "Josefin Sans";
+  text-align: center;
+
+  /*EFECTO COLOR TEXTO*/
+  background: linear-gradient(to left,
+      #ffffff 10%, #1c4b6d 50%, #ffffff 60%);
+  background-size: auto auto;
+  background-clip: border-box;
+  background-size: 200% auto;
+  color: white;
+  background-clip: text;
+  text-fill-color: transparent;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: textclip 5s linear infinite;
+
+}
+
+
+
+/* SUBTITULO SECCION 2*/
+.subtitulo-sec2 {
+  font-size: 30px;
+  font-weight: 500;
+  margin: 20px 0;
+  font-family: "Josefin Sans";
+  text-align: center;
+}
+
+.btn-sec2 {
+  position: relative;
+  display: block;
+  padding: 25px;
+  border-radius: 50px;
+  text-align: center;
+  font-weight: bold;
+  width: 130px;
+  height: 66px;
+  overflow: hidden;
+  color: #ffffff;
+  cursor: pointer;
+  letter-spacing: 2px;
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.5);
+  text-decoration: none;
+  transition: all ease 0.5s;
+  background: #10b87b;
+  font-family: "Josefin Sans";
+  font-size: 15px;
+  left: 187px;
+
+}
+/*--------------------------DIV 2 PROGRAMAS---------------------------*/
+
+/*-------------------------------DIV 3 JUEGOS---------------------------*/
+.sec3{
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background: linear-gradient(97.13deg, #0A2A88 5.56%, #3177B7 52%, #7F5A9B 100%);
+}
+
+/* IMG/OBJETOS JUEGOS */
+.objeto1{
+  position: absolute;
+  width: 371px;
+  height: 355px;
+  right: 100px;
+  top: 60px;
+}
+.objeto2{
+ position: absolute;
+ width: 388px;
+ height: 285px;
+ right: 300px;
+ top: 370px;
+}
+.gatogamer{
+  position: absolute;
+  width: 230px;
+  height: 220px;
+  left: 750px;
+  top: 150px;
+}
+
+/* DIV DE TEXTOS */
+.container-text-sec3 {
+  flex-basis: 50%;
+  overflow: hidden;
+  color: #fff;
+  left: 30px;
+  margin-left: 40px;
+  margin-top: 300px;
+  align-items: center;
+  width: 511px;
+  height: 254px;
+  position: absolute;
+}
+
+/* TITULO SECCION 2 */
+.titulo-sec3 {
+  font-size: 50px;
+  font-family: "Josefin Sans";
+  text-align: center;
+
+  /*EFECTO COLOR TEXTO*/
+  background: linear-gradient(to left,
+      #ffffff 10%, #1c4b6d 50%, #ffffff 60%);
+  background-size: auto auto;
+  background-clip: border-box;
+  background-size: 200% auto;
+  color: white;
+  background-clip: text;
+  text-fill-color: transparent;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: textclip 5s linear infinite;
+
+}
+
+
+
+/* SUBTITULO SECCION 2*/
+.subtitulo-sec3 {
+  font-size: 30px;
+  font-weight: 500;
+  margin: 20px 0;
+  font-family: "Josefin Sans";
+  text-align: center;
+}
+
+.btn-sec3 {
+  position: relative;
+  display: block;
+  padding: 25px;
+  border-radius: 50px;
+  text-align: center;
+  font-weight: bold;
+  width: 130px;
+  height: 66px;
+  overflow: hidden;
+  color: #ffffff;
+  cursor: pointer;
+  letter-spacing: 2px;
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.5);
+  text-decoration: none;
+  transition: all ease 0.5s;
+  background: #10b87b;
+  font-family: "Josefin Sans";
+  font-size: 15px;
+  left: 187px;
+
+}
+
+
+/*-------------------------------DIV 3 JUEGOS---------------------------*/
+
+
+/*-------------------------------SEC 4 PELICULAS---------------------------*/
+.sec4{
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background: linear-gradient(104.04deg, #2196F3 0%, #F44336 100%);
+}
+
+/* IMG/OBJETOS PELICULAS */
+.popcorn{
+  position: absolute;
+  width: 250px;
+  height: 284px;
+  left: 75vw;
+  top: 100px;
+}
+.gatocine{
+  position: absolute;
+  width: 190px;
+  height: 264px;
+  left: 160px;
+  top: 400px;
+}
+
+/* DIV DE TEXTOS */
+.container-text-sec4 {
+  flex-basis: 50%;
+  overflow: hidden;
+  color: #fff;
+  left: 30px;
+  margin: 345px 470px;
+  align-items: center;
+  width: 511px;
+  height: 254px;
+  position: absolute;
+}
+
+/* TITULO SECCION 4 */
+.titulo-sec4 {
+  font-size: 50px;
+  font-family: "Josefin Sans";
+  text-align: center;
+
+  /*EFECTO COLOR TEXTO*/
+  background: linear-gradient(to left,
+      #ffffff 10%, #1c4b6d 50%, #ffffff 60%);
+  background-size: auto auto;
+  background-clip: border-box;
+  background-size: 200% auto;
+  color: white;
+  background-clip: text;
+  text-fill-color: transparent;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: textclip 5s linear infinite;
+
+}
+
+
+
+/* SUBTITULO SECCION 2*/
+.subtitulo-sec4 {
+  font-size: 30px;
+  font-weight: 500;
+  margin: 20px 0;
+  font-family: "Josefin Sans";
+  text-align: center;
+}
+
+.btn-sec4 {
+  position: relative;
+  display: block;
+  padding: 25px;
+  border-radius: 10px;
+  text-align: center;
+  font-weight: bold;
+  width: 130px;
+  height: 66px;
+  overflow: hidden;
+  color: #ffffff;
+  cursor: pointer;
+  letter-spacing: 2px;
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.5);
+  text-decoration: none;
+  transition: all ease 0.5s;
+  background: #10b87b;
+  font-family: "Josefin Sans";
+  font-size: 15px;
+  left: 187px;
+
+}
+/*-------------------------------SEC 4 PELICULAS---------------------------*/
+
+
+/*-------------------------------SEC 5 CONTACTO---------------------------*/
+
+.sec5{
+  position: relative;
+  display: flex;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  background: linear-gradient(90deg, #556270 0%, #e9335b 100%);
+  transition: all 0.3s ease-in-out;
+}
+
+/* IMG GATOS CONTACTO */
+.gatocontacto1{
+  position: absolute;
+  width: 211px;
+  height: 218px;
+  left: 90px;
+  margin-top: 230px;
+}
+.gatocontacto2{
+  position: absolute;
+  width: 172px;
+  height: 170px;
+  left: 980px;
+  top: 81px;
+}
+
+
+/* RECTANGULO DE CONTACTO */
+.contact-container {  
+  display: flex;
+  background: #3e3e3e;
+  margin: 100px auto;
+  width: 760px;
+  height: 440px;
+  overflow: hidden;
+  border-radius: 20px;
+  align-items: center;
+  border-left: 4px solid #ea1d6f;
+  border-right: 4px solid #6d5469;
+
+}
+
+/* RECTANGULO IZQUIERDO */
+.left-col {
+  width: 380px;
+  height: 440px;
+  background-size: cover;
+}
+
+/* TITULO IZQUIERDO */
+.titulo-izquierdo-sec5{
+  color: #ea1f6f;
+  padding-top: 15px;
+  padding-left: 96px;
+  padding-bottom: 5px;
+  font-family: 'Josefin Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 36px;
+  border-bottom: 4px solid;
+}
+
+/* LOGO */
+.imglogo-sec5 {
+  width: 180px;
+  height: 180px;
+  margin: 3vw 110px;
+  
+  
+  -webkit-box-shadow: 0px 0px 20px 4px rgba(0, 0, 0, 1);
+  -moz-box-shadow: 0px 0px 20px 4px rgba(0, 0, 0, 1);
+  box-shadow: 0px 0px 20px 4px rgba(0, 0, 0, 1);
+  border-radius: 200px;
+  animation: rotation 8s infinite linear;
+
+}
+/* ANIMACION LOGO */
+@keyframes rotation {
+  from {
+    transform: rotateY(0deg);
+  }
+
+  to {
+    transform: rotateY(359deg);
+  }
+}
+
+/* FIN LOGO */
+
+/* LOGO IG */
+.logoig-sec5 {
+  position: relative;
+  margin: auto 115px;
+  width: 70px;
+  height: 70px;
+  overflow: hidden;
+}
+
+/* LOGO GMAIL */
+.logogmail-sec5 {
+  position: relative;
+  margin: 0px -85px;
+  width: 70px;
+  height: 70px;
+  overflow: hidden;
+}
+
+/* RECTANGULO DERECHO */
+.right-col {
+  background: #3e3e3e;
+  width: 380px;
+  height: 440px;
+  padding: 1.3rem 0;
+  
+}
+
+/* TITULO INVISIBLE DERECHO */
+.titulo-derecho-sec5{
+  color: #3e3e3e;
+  font-family: 'Josefin Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 36px;
+  
+  
+  border-bottom: 4px solid #ea1d6f;
+  
+}
+
+
+label,
+button,
+.description {
+  font-family: 'Josefin Sans';
+  font-weight: 400;
+  letter-spacing: 0.1rem;
+}
+
+
+
+
+/* TITULOS DEL FORMULARIO */
+label,
+.description {
+  color: #ff2e82;
+  text-transform: uppercase;
+  font-size: 0.625rem;
+}
+
+/* CAJA DEL FORMULARIO */
+form {
+  width: 380px;
+  position: relative;
+  margin-top: 2rem;
+  padding: 1rem 0;
+}
+
+/* ORDEN DEL FORMULARIO */
+input,
+textarea,
+label {
+  width: 380px;
+  display: block;
+}
+
+
+placeholder,
+input,
+textarea {
+  font-family: 'Josefin Sans';
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: #d3c7c7;
+}
+
+/* CAJA DONDE SE ESCRIBE EL FORMULARIO */
+input,
+textarea {
+  color: #d3c7c7;
+  font-weight: 500;
+  background: #3e3e3e;
+  border: none;
+  border-bottom: 1px solid #ff2e82;
+  padding: 0.5rem 0;
+  margin-bottom: 1rem;
+  outline: none;
+}
+
+textarea {
+  resize: none;
+}
+
+/* BOTON ENVIAR DEL FORMULARIO */
+button {
+  text-transform: uppercase;
+  font-weight: 300;
+  background: #c7b2b2;
+  color: #3e3e3e;
+  width: 10rem;
+  height: 2.25rem;
+  border: none;
+  border-radius: 2px;
+  outline: none;
+  cursor: pointer;
+  margin: auto 100px;
+  border-radius: 20px;
+}
+
+/* EFECTOS DE OPACIDAD AL PASAR EL MOUSE POR EL FORMULARIO Y BOTON */
+input:hover,
+textarea:hover,
+button:hover {
+  opacity: 0.5;
+}
+
+button:active {
+  opacity: 0.8;
+}
+
+
+
+
+#error,
+#success-msg {
+  width: 380px;
+  margin: 0.125rem 0;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  font-family: 'Jost';
+  color: #ff2e82;
+}
+
+
+#success-msg {
+  transition-delay: 3s;
+}
+
+
+/*-------------------------------SEC 5 CONTACTO---------------------------*/
